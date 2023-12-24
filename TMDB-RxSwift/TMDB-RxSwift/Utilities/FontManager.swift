@@ -1,6 +1,6 @@
 //
 //  FontManager.swift
-//  rxSwiftTry
+//  TMDB-RxSwiftrx
 //
 //  Created by albooren on 19.12.2023.
 //
