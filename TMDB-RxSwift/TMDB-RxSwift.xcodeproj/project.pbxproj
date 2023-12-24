@@ -97,11 +97,11 @@
 		C94F1C862B386FAB0064FD8F /* TMDB-RxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				C94F1C872B386FAB0064FD8F /* AppDelegate.swift */,
-				C94F1C892B386FAB0064FD8F /* SceneDelegate.swift */,
-				C94F1C8B2B386FAB0064FD8F /* ViewController.swift */,
+				C94F1CB72B3871370064FD8F /* Application */,
+				C94F1CB82B3871480064FD8F /* Scenes */,
+				C94F1CB92B3871A60064FD8F /* Utilities */,
+				C94F1CBA2B3871BF0064FD8F /* Network */,
 				C94F1C902B386FAC0064FD8F /* Assets.xcassets */,
-				C94F1C922B386FAC0064FD8F /* LaunchScreen.storyboard */,
 				C94F1C952B386FAC0064FD8F /* Info.plist */,
 			);
 			path = "TMDB-RxSwift";
@@ -122,6 +122,38 @@
 				C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */,
 			);
 			path = "TMDB-RxSwiftUITests";
+			sourceTree = "<group>";
+		};
+		C94F1CB72B3871370064FD8F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C94F1C872B386FAB0064FD8F /* AppDelegate.swift */,
+				C94F1C892B386FAB0064FD8F /* SceneDelegate.swift */,
+				C94F1C922B386FAC0064FD8F /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C94F1CB82B3871480064FD8F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C94F1C8B2B386FAB0064FD8F /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C94F1CB92B3871A60064FD8F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C94F1CBA2B3871BF0064FD8F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
