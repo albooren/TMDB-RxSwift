@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DDF4DC51B07E1F72D272D17 /* Pods_TMDB_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2894E3249C0E73D926A55387 /* Pods_TMDB_RxSwift.framework */; };
 		C94F1C882B386FAB0064FD8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C872B386FAB0064FD8F /* AppDelegate.swift */; };
 		C94F1C8A2B386FAB0064FD8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C892B386FAB0064FD8F /* SceneDelegate.swift */; };
 		C94F1C8C2B386FAB0064FD8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C8B2B386FAB0064FD8F /* ViewController.swift */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11F2D3E237C940C265124135 /* Pods-TMDB-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB-RxSwift.release.xcconfig"; path = "Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
+		2894E3249C0E73D926A55387 /* Pods_TMDB_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMDB_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94F1C842B386FAB0064FD8F /* TMDB-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMDB-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94F1C872B386FAB0064FD8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C94F1C892B386FAB0064FD8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		C94F1CA42B386FAC0064FD8F /* TMDB-RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB-RxSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94F1CA82B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITests.swift; sourceTree = "<group>"; };
 		C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F45A7D6039F0B6735567F737 /* Pods-TMDB-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB-RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DDF4DC51B07E1F72D272D17 /* Pods_TMDB_RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6D11BF1FB5F2EE29696B99E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2894E3249C0E73D926A55387 /* Pods_TMDB_RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C94F1C7B2B386FAB0064FD8F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,8 @@
 				C94F1C9D2B386FAC0064FD8F /* TMDB-RxSwiftTests */,
 				C94F1CA72B386FAC0064FD8F /* TMDB-RxSwiftUITests */,
 				C94F1C852B386FAB0064FD8F /* Products */,
+				F11D23C6BAFE0658566CA75F /* Pods */,
+				A6D11BF1FB5F2EE29696B99E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +171,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		F11D23C6BAFE0658566CA75F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F45A7D6039F0B6735567F737 /* Pods-TMDB-RxSwift.debug.xcconfig */,
+				11F2D3E237C940C265124135 /* Pods-TMDB-RxSwift.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C94F1CAE2B386FAC0064FD8F /* Build configuration list for PBXNativeTarget "TMDB-RxSwift" */;
 			buildPhases = (
+				08697A8C8FE48114C90195AF /* [CP] Check Pods Manifest.lock */,
 				C94F1C802B386FAB0064FD8F /* Sources */,
 				C94F1C812B386FAB0064FD8F /* Frameworks */,
 				C94F1C822B386FAB0064FD8F /* Resources */,
+				BBB627AEC08B5C5B924165A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +307,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08697A8C8FE48114C90195AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TMDB-RxSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBB627AEC08B5C5B924165A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C94F1C802B386FAB0064FD8F /* Sources */ = {
@@ -457,6 +526,7 @@
 		};
 		C94F1CAF2B386FAC0064FD8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F45A7D6039F0B6735567F737 /* Pods-TMDB-RxSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -484,6 +554,7 @@
 		};
 		C94F1CB02B386FAC0064FD8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11F2D3E237C940C265124135 /* Pods-TMDB-RxSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
