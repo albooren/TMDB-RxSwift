@@ -10,13 +10,21 @@
 		8DDF4DC51B07E1F72D272D17 /* Pods_TMDB_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2894E3249C0E73D926A55387 /* Pods_TMDB_RxSwift.framework */; };
 		C94F1C882B386FAB0064FD8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C872B386FAB0064FD8F /* AppDelegate.swift */; };
 		C94F1C8A2B386FAB0064FD8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C892B386FAB0064FD8F /* SceneDelegate.swift */; };
-		C94F1C8C2B386FAB0064FD8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C8B2B386FAB0064FD8F /* ViewController.swift */; };
+		C94F1C8C2B386FAB0064FD8F /* PopularSeriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C8B2B386FAB0064FD8F /* PopularSeriesListViewController.swift */; };
 		C94F1C912B386FAC0064FD8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94F1C902B386FAC0064FD8F /* Assets.xcassets */; };
 		C94F1C942B386FAC0064FD8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94F1C922B386FAC0064FD8F /* LaunchScreen.storyboard */; };
 		C94F1C9F2B386FAC0064FD8F /* TMDB_RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C9E2B386FAC0064FD8F /* TMDB_RxSwiftTests.swift */; };
 		C94F1CA92B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1CA82B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift */; };
 		C94F1CAB2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */; };
 		C9BE094C2B3876560053A080 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE094B2B3876560053A080 /* BaseViewController.swift */; };
+		C9BE094F2B38834B0053A080 /* PopularSeriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE094E2B38834B0053A080 /* PopularSeriesListViewModel.swift */; };
+		C9BE09512B38837A0053A080 /* PopularSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09502B38837A0053A080 /* PopularSeriesModel.swift */; };
+		C9BE09542B3883B10053A080 /* PopularSeriesListCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09532B3883B10053A080 /* PopularSeriesListCVCell.swift */; };
+		C9BE095A2B3883E70053A080 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09552B3883E70053A080 /* FontManager.swift */; };
+		C9BE095B2B3883E70053A080 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9BE09572B3883E70053A080 /* SanFranciscoText-Regular.otf */; };
+		C9BE095C2B3883E70053A080 /* SanFranciscoText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9BE09582B3883E70053A080 /* SanFranciscoText-Bold.otf */; };
+		C9BE095D2B3883E70053A080 /* SanFranciscoText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9BE09592B3883E70053A080 /* SanFranciscoText-Medium.otf */; };
+		C9BE095F2B3884B40053A080 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE095E2B3884B40053A080 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +50,7 @@
 		C94F1C842B386FAB0064FD8F /* TMDB-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMDB-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94F1C872B386FAB0064FD8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C94F1C892B386FAB0064FD8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C94F1C8B2B386FAB0064FD8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C94F1C8B2B386FAB0064FD8F /* PopularSeriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesListViewController.swift; sourceTree = "<group>"; };
 		C94F1C902B386FAC0064FD8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C94F1C932B386FAC0064FD8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C94F1C952B386FAC0064FD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +60,14 @@
 		C94F1CA82B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITests.swift; sourceTree = "<group>"; };
 		C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C9BE094B2B3876560053A080 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C9BE094E2B38834B0053A080 /* PopularSeriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesListViewModel.swift; sourceTree = "<group>"; };
+		C9BE09502B38837A0053A080 /* PopularSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesModel.swift; sourceTree = "<group>"; };
+		C9BE09532B3883B10053A080 /* PopularSeriesListCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesListCVCell.swift; sourceTree = "<group>"; };
+		C9BE09552B3883E70053A080 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		C9BE09572B3883E70053A080 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
+		C9BE09582B3883E70053A080 /* SanFranciscoText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Bold.otf"; sourceTree = "<group>"; };
+		C9BE09592B3883E70053A080 /* SanFranciscoText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Medium.otf"; sourceTree = "<group>"; };
+		C9BE095E2B3884B40053A080 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F45A7D6039F0B6735567F737 /* Pods-TMDB-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB-RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +170,7 @@
 		C94F1CB82B3871480064FD8F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C94F1C8B2B386FAB0064FD8F /* ViewController.swift */,
+				C9BE094D2B3883310053A080 /* SeriesList */,
 				C9BE094B2B3876560053A080 /* BaseViewController.swift */,
 			);
 			path = Scenes;
@@ -163,6 +179,9 @@
 		C94F1CB92B3871A60064FD8F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C9BE095E2B3884B40053A080 /* Constants.swift */,
+				C9BE09552B3883E70053A080 /* FontManager.swift */,
+				C9BE09562B3883E70053A080 /* Fonts */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -172,6 +191,35 @@
 			children = (
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C9BE094D2B3883310053A080 /* SeriesList */ = {
+			isa = PBXGroup;
+			children = (
+				C94F1C8B2B386FAB0064FD8F /* PopularSeriesListViewController.swift */,
+				C9BE094E2B38834B0053A080 /* PopularSeriesListViewModel.swift */,
+				C9BE09502B38837A0053A080 /* PopularSeriesModel.swift */,
+				C9BE09522B38839D0053A080 /* Subviews */,
+			);
+			path = SeriesList;
+			sourceTree = "<group>";
+		};
+		C9BE09522B38839D0053A080 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE09532B3883B10053A080 /* PopularSeriesListCVCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		C9BE09562B3883E70053A080 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE09572B3883E70053A080 /* SanFranciscoText-Regular.otf */,
+				C9BE09582B3883E70053A080 /* SanFranciscoText-Bold.otf */,
+				C9BE09592B3883E70053A080 /* SanFranciscoText-Medium.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F11D23C6BAFE0658566CA75F /* Pods */ = {
@@ -290,7 +338,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94F1C942B386FAC0064FD8F /* LaunchScreen.storyboard in Resources */,
+				C9BE095C2B3883E70053A080 /* SanFranciscoText-Bold.otf in Resources */,
 				C94F1C912B386FAC0064FD8F /* Assets.xcassets in Resources */,
+				C9BE095D2B3883E70053A080 /* SanFranciscoText-Medium.otf in Resources */,
+				C9BE095B2B3883E70053A080 /* SanFranciscoText-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,10 +408,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C94F1C8C2B386FAB0064FD8F /* ViewController.swift in Sources */,
+				C94F1C8C2B386FAB0064FD8F /* PopularSeriesListViewController.swift in Sources */,
+				C9BE09542B3883B10053A080 /* PopularSeriesListCVCell.swift in Sources */,
+				C9BE09512B38837A0053A080 /* PopularSeriesModel.swift in Sources */,
+				C9BE094F2B38834B0053A080 /* PopularSeriesListViewModel.swift in Sources */,
 				C9BE094C2B3876560053A080 /* BaseViewController.swift in Sources */,
 				C94F1C882B386FAB0064FD8F /* AppDelegate.swift in Sources */,
+				C9BE095A2B3883E70053A080 /* FontManager.swift in Sources */,
 				C94F1C8A2B386FAB0064FD8F /* SceneDelegate.swift in Sources */,
+				C9BE095F2B3884B40053A080 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +501,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -508,7 +564,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
