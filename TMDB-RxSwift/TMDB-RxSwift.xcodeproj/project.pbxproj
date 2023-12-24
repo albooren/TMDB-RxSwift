@@ -16,6 +16,7 @@
 		C94F1C9F2B386FAC0064FD8F /* TMDB_RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C9E2B386FAC0064FD8F /* TMDB_RxSwiftTests.swift */; };
 		C94F1CA92B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1CA82B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift */; };
 		C94F1CAB2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */; };
+		C9BE094C2B3876560053A080 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE094B2B3876560053A080 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C94F1CA42B386FAC0064FD8F /* TMDB-RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB-RxSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94F1CA82B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITests.swift; sourceTree = "<group>"; };
 		C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9BE094B2B3876560053A080 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F45A7D6039F0B6735567F737 /* Pods-TMDB-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB-RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				C94F1C8B2B386FAB0064FD8F /* ViewController.swift */,
+				C9BE094B2B3876560053A080 /* BaseViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -177,7 +180,6 @@
 				F45A7D6039F0B6735567F737 /* Pods-TMDB-RxSwift.debug.xcconfig */,
 				11F2D3E237C940C265124135 /* Pods-TMDB-RxSwift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -356,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94F1C8C2B386FAB0064FD8F /* ViewController.swift in Sources */,
+				C9BE094C2B3876560053A080 /* BaseViewController.swift in Sources */,
 				C94F1C882B386FAB0064FD8F /* AppDelegate.swift in Sources */,
 				C94F1C8A2B386FAB0064FD8F /* SceneDelegate.swift in Sources */,
 			);
