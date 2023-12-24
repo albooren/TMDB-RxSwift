@@ -10,6 +10,6 @@ import UIKit
 let screenHeight: CGFloat = UIScreen.main.bounds.height
 let screenWidth: CGFloat = UIScreen.main.bounds.width
 
-let apikey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTZiMDEwNDE0M2QzNDFhMDc5NTcxZTA2NDYzNjZjMCIsInN1YiI6IjVmZTcyMDcwMTYwZTczMDAzZmFkZDdhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LC_wVoR7wOYu6E6mnsUdnnEsOGaXutC9r8u60TKZPPA"
+let apikey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOTRhMTJjOGEzMWE1NzgwM2NiMjdmMTA0ZjliOWQyZCIsInN1YiI6IjYyYWNkMWZjYzdhN2UwMDA1MWQ1MzZiMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i4qsTEOMR0jr_8G8up3ahxNSwW7KE-h4jtvtzpAWf5g"
 
 let networkManager = NetworkManager.shared
