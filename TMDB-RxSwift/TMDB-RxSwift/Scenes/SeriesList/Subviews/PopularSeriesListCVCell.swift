@@ -55,12 +55,13 @@ final class PopularSeriesListCVCell: UICollectionViewCell {
         movieVoteLabel.font = FontManager.fontMedium(12)
         addSubview(movieVoteLabel)
         
-        rightArrow = UIImageView(image: UIImage(named: "rightArrow"))
+        rightArrow = UIImageView(image: UIImage(named: "rightArrow")?.withRenderingMode(.alwaysTemplate))
+        rightArrow.tintColor = .label
         rightArrow.contentMode = .scaleAspectFill
         addSubview(rightArrow)
         
-        underLine.backgroundColor = .gray
-        underLine.layer.opacity = 0.2
+        underLine.backgroundColor = .separator
+        underLine.layer.opacity = 0.5
         addSubview(underLine)
         
         movieImage.snp.makeConstraints { make in
@@ -114,9 +115,9 @@ final class PopularSeriesListCVCell: UICollectionViewCell {
         movieNameLabel.text = movieName
         movieShortDescLabel.text = movieShortDesc
         
-        let stringVote = String(vote)
-        let range = (stringVote + "/10" as NSString).range(of: stringVote)
-        let mutableAttributedString = NSMutableAttributedString.init(string: stringVote + "/10")
+        let formattedVote = String(format: "%.2f", vote)
+        let range = (formattedVote + "/10" as NSString).range(of: formattedVote)
+        let mutableAttributedString = NSMutableAttributedString.init(string: formattedVote + "/10")
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor,
                                              value: UIColor.label,
                                              range: range)

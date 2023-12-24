@@ -16,6 +16,7 @@
 		C94F1C9F2B386FAC0064FD8F /* TMDB_RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1C9E2B386FAC0064FD8F /* TMDB_RxSwiftTests.swift */; };
 		C94F1CA92B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1CA82B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift */; };
 		C94F1CAB2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */; };
+		C98D04052B38B14D00DAE43A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D04042B38B14D00DAE43A /* API.swift */; };
 		C9BE094C2B3876560053A080 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE094B2B3876560053A080 /* BaseViewController.swift */; };
 		C9BE094F2B38834B0053A080 /* PopularSeriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE094E2B38834B0053A080 /* PopularSeriesListViewModel.swift */; };
 		C9BE09512B38837A0053A080 /* PopularSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09502B38837A0053A080 /* PopularSeriesModel.swift */; };
@@ -27,6 +28,7 @@
 		C9BE095F2B3884B40053A080 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE095E2B3884B40053A080 /* Constants.swift */; };
 		C9BE09612B3893D20053A080 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09602B3893D20053A080 /* NetworkManager.swift */; };
 		C9BE09642B38A0DA0053A080 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09632B38A0DA0053A080 /* DetailViewController.swift */; };
+		C9BE09692B38AD030053A080 /* Date+StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09682B38AD030053A080 /* Date+StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		C94F1CA42B386FAC0064FD8F /* TMDB-RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TMDB-RxSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94F1CA82B386FAC0064FD8F /* TMDB_RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITests.swift; sourceTree = "<group>"; };
 		C94F1CAA2B386FAC0064FD8F /* TMDB_RxSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_RxSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C98D04042B38B14D00DAE43A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C9BE094B2B3876560053A080 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C9BE094E2B38834B0053A080 /* PopularSeriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesListViewModel.swift; sourceTree = "<group>"; };
 		C9BE09502B38837A0053A080 /* PopularSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesModel.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		C9BE095E2B3884B40053A080 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9BE09602B3893D20053A080 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C9BE09632B38A0DA0053A080 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C9BE09682B38AD030053A080 /* Date+StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+StringExtensions.swift"; sourceTree = "<group>"; };
 		F45A7D6039F0B6735567F737 /* Pods-TMDB-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB-RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-TMDB-RxSwift/Pods-TMDB-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,8 +142,10 @@
 				C94F1CB82B3871480064FD8F /* Scenes */,
 				C94F1CB92B3871A60064FD8F /* Utilities */,
 				C94F1CBA2B3871BF0064FD8F /* Network */,
+				C9BE09672B38ACEC0053A080 /* Extensions */,
 				C94F1C902B386FAC0064FD8F /* Assets.xcassets */,
 				C94F1C952B386FAC0064FD8F /* Info.plist */,
+				C9BE09652B38AB520053A080 /* Resources */,
 			);
 			path = "TMDB-RxSwift";
 			sourceTree = "<group>";
@@ -174,9 +180,9 @@
 		C94F1CB82B3871480064FD8F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C9BE09662B38AB960053A080 /* Base */,
 				C9BE094D2B3883310053A080 /* SeriesList */,
 				C9BE09622B38A0C50053A080 /* DetailView */,
-				C9BE094B2B3876560053A080 /* BaseViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -186,7 +192,6 @@
 			children = (
 				C9BE095E2B3884B40053A080 /* Constants.swift */,
 				C9BE09552B3883E70053A080 /* FontManager.swift */,
-				C9BE09562B3883E70053A080 /* Fonts */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				C9BE09602B3893D20053A080 /* NetworkManager.swift */,
+				C98D04042B38B14D00DAE43A /* API.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -234,6 +240,30 @@
 				C9BE09632B38A0DA0053A080 /* DetailViewController.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		C9BE09652B38AB520053A080 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE09562B3883E70053A080 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C9BE09662B38AB960053A080 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE094B2B3876560053A080 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C9BE09672B38ACEC0053A080 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE09682B38AD030053A080 /* Date+StringExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F11D23C6BAFE0658566CA75F /* Pods */ = {
@@ -427,8 +457,10 @@
 				C9BE09542B3883B10053A080 /* PopularSeriesListCVCell.swift in Sources */,
 				C9BE09612B3893D20053A080 /* NetworkManager.swift in Sources */,
 				C9BE09512B38837A0053A080 /* PopularSeriesModel.swift in Sources */,
+				C9BE09692B38AD030053A080 /* Date+StringExtensions.swift in Sources */,
 				C9BE094F2B38834B0053A080 /* PopularSeriesListViewModel.swift in Sources */,
 				C9BE094C2B3876560053A080 /* BaseViewController.swift in Sources */,
+				C98D04052B38B14D00DAE43A /* API.swift in Sources */,
 				C94F1C882B386FAB0064FD8F /* AppDelegate.swift in Sources */,
 				C9BE095A2B3883E70053A080 /* FontManager.swift in Sources */,
 				C94F1C8A2B386FAB0064FD8F /* SceneDelegate.swift in Sources */,

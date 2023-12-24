@@ -61,12 +61,26 @@ class PopularSeriesListViewController: BaseViewController {
             self.popularSeriesListCVPagining = false
             cell.fillWith(movieName: data.name ?? "",
                           movieShortDesc: data.overview ?? "",
-                          imageURL: networkManager.getImageURL(with: data.posterPath ?? ""),
+                          imageURL: API.shared.getImageURL(with: data.posterPath ?? ""),
                           vote: data.voteAverage ?? 0)
         }.disposed(by: bag)
         
+        handleSeriesTapped()
+        
         makeLoader()
         viewModel.getData()
+    }
+    
+    func handleSeriesTapped(){
+        popularSeriesListCV.rx.modelSelected(PopularSeriesModel.self).bind { movie in
+            let detail = DetailViewController()
+            detail.fillWith(image: movie.posterPath ?? "",
+                            name: movie.name ?? "",
+                            desc: movie.overview ?? "",
+                            date: movie.firstAirDate ?? "",
+                            vote: movie.voteAverage ?? 0)
+            self.navigationController?.pushViewController(detail, animated: true)
+        }.disposed(by: bag)
     }
 }
 

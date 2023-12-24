@@ -17,10 +17,9 @@ final class PopularListViewModel {
     private var maxPage = 1
     private var nowPlayingMaxPageNumber = 1
     
-    
     func getData() {
-        networkManager.request(url: networkManager.getURL(with: Endpoints.popularTVSeries.rawValue,
-                                                          page: page),
+        networkManager.request(url: API.shared.getURL(with: Endpoints.popularTVSeries.rawValue,
+                                                      page: page),
                                requestMethod: .get) { (result: Result<ResponseDataModel, Error>) in
             switch result {
             case .success(let response):
@@ -36,7 +35,6 @@ final class PopularListViewModel {
             }
         }
     }
-
     
     func currentPage() -> Int {
         return page
