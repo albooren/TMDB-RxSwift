@@ -39,8 +39,6 @@ class PopularSeriesListViewController: BaseViewController {
     
     override func initUI(){
         super.initUI()
-        
-        popularSeriesListCV.delegate = self
         mainView.addSubview(popularSeriesListCV)
         popularSeriesListCV.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -65,6 +63,7 @@ class PopularSeriesListViewController: BaseViewController {
                           vote: data.voteAverage ?? 0)
         }.disposed(by: bag)
         
+        handleScrollToLoadMoreSeries()
         handleSeriesTapped()
         
         makeLoader()
@@ -82,15 +81,20 @@ class PopularSeriesListViewController: BaseViewController {
             self.navigationController?.pushViewController(detail, animated: true)
         }.disposed(by: bag)
     }
-}
-
-extension PopularSeriesListViewController : UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item > viewModel.popularSeriesList.count - 5 {
-            if viewModel.canLoadMore(),!popularSeriesListCVPagining {
-                    popularSeriesListCVPagining = true
-                    loadMoreData()
+    
+    func handleScrollToLoadMoreSeries(){
+        popularSeriesListCV.rx.willDisplayCell
+            .observe(on: MainScheduler.instance)
+            .map({ ($0.cell as? PopularSeriesListCVCell, $0.at.item) })
+            .subscribe { [weak self] cell, indexPath in
+                guard let self = self else { return }
+                if indexPath > self.viewModel.popularSeriesList.count - 5 {
+                    if self.viewModel.canLoadMore(),!self.popularSeriesListCVPagining {
+                        self.popularSeriesListCVPagining = true
+                        self.loadMoreData()
+                    }
+                }
             }
-        }
+            .disposed(by: bag)
     }
 }
