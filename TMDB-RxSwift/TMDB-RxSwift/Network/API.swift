@@ -35,7 +35,7 @@ final class API {
     }
     
     func getImageURL(with imageURL:String) -> URL? {
-        let baseURL = "https://image.tmdb.org/t/p/original"
+        let baseURL = "https://image.tmdb.org/t/p/w300"
         return URL(string: baseURL + imageURL)
     }
 }
