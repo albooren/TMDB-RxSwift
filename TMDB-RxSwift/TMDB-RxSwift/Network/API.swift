@@ -11,15 +11,6 @@ enum Endpoints : String {
     case popularTVSeries = "/3/tv/popular"
 }
 
-enum HTTPMethods: String {
-    case get = "GET"
-    case head = "HEAD"
-    case post = "POST"
-    case put = "PUT"
-    case delete = "DELETE"
-    case connect = "CONNECT"
-}
-
 final class API {
     static let shared = API()
     

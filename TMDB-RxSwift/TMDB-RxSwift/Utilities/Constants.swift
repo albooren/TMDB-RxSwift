@@ -12,7 +12,5 @@ let screenWidth: CGFloat = UIScreen.main.bounds.width
 
 let apikey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOTRhMTJjOGEzMWE1NzgwM2NiMjdmMTA0ZjliOWQyZCIsInN1YiI6IjYyYWNkMWZjYzdhN2UwMDA1MWQ1MzZiMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i4qsTEOMR0jr_8G8up3ahxNSwW7KE-h4jtvtzpAWf5g"
 
-let networkManager = NetworkManager.shared
-
 let serverDateFormat = "yyyy-mm-dd"
 let clientDateStringFormat = "yyyy/mm/dd"

@@ -10,6 +10,8 @@ import RxCocoa
 
 final class PopularListViewModel {
     
+    private var bag = DisposeBag()
+    
     var popularSeriesList: [PopularSeriesModel] = []
     var publishlist = PublishSubject<[PopularSeriesModel]>()
     
@@ -18,11 +20,10 @@ final class PopularListViewModel {
     private var nowPlayingMaxPageNumber = 1
     
     func getData() {
-        networkManager.request(url: API.shared.getURL(with: Endpoints.popularTVSeries.rawValue,
-                                                      page: page),
-                               requestMethod: .get) { (result: Result<ResponseDataModel, Error>) in
-            switch result {
-            case .success(let response):
+        let url = API.shared.getURL(with: Endpoints.popularTVSeries.rawValue,page: page)
+        NetworkManager.shared.rxRequest(url: url, requestMethod: .get)
+            .subscribe(onNext: { [weak self] (response: ResponseDataModel) in
+                guard let self = self else { return }
                 self.maxPage = response.totalPages ?? 1
                 //to avoid duplicate and empty data
                 let newData = response.results?.filter { series in
@@ -30,14 +31,10 @@ final class PopularListViewModel {
                 }
                 self.popularSeriesList.append(contentsOf: newData ?? [])
                 self.publishlist.onNext(self.popularSeriesList)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func currentPage() -> Int {
-        return page
+            }, onError: { error in
+                print("Error: \(error)")
+            })
+            .disposed(by: bag)
     }
     
     func pageUp() {
