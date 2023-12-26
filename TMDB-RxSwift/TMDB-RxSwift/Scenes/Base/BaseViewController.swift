@@ -11,7 +11,16 @@ import SnapKit
 class BaseViewController: UIViewController {
     
     var mainView = UIView()
-    private var alertLoader = UIAlertController()
+    
+    private let alertLoader : UIAlertController = {
+        let alert = UIAlertController(title: nil,message: "Please wait...",preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50,height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = .medium
+        loadingIndicator.startAnimating()
+        alert.view.addSubview(loadingIndicator)
+        return alert
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,23 +37,10 @@ class BaseViewController: UIViewController {
     
     func presentLoader(){
         if alertLoader.isBeingPresented { return }
-        alertLoader = UIAlertController(title: nil,
-                                        message: "Please wait...",
-                                        preferredStyle: .alert)
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,
-                                                                     y: 5,
-                                                                     width: 50,
-                                                                     height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = .medium
-        loadingIndicator.startAnimating()
-        alertLoader.view.addSubview(loadingIndicator)
         present(alertLoader, animated: true, completion: nil)
     }
     
     func dismissLoader() {
-        DispatchQueue.main.async {
-            self.alertLoader.dismiss(animated: true)
-        }
+        self.alertLoader.dismiss(animated: true)
     }
 }
