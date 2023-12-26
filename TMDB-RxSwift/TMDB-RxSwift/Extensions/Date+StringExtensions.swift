@@ -8,15 +8,7 @@
 import Foundation
 
 public extension Date {
-    static func convertStringDateToDate(stDate:String,format:String)->Date! {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        dateFormatter.timeZone = TimeZone.current
-        let d = dateFormatter.date(from: stDate)
-        return d
-    }
-    
-    func convertDateToString(format:String)->String {
+    func convertDateToString(format:String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
