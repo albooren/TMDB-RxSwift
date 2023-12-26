@@ -1,5 +1,5 @@
 //
-//  Date+StringExtensions.swift
+//  Date+Extensions.swift
 //  TMDB-RxSwift
 //
 //  Created by albooren on 24.12.2023.
@@ -12,13 +12,5 @@ public extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
-    }
-}
-
-public extension String {
-    func toDate(format:String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        return dateFormatter.date(from: self) ?? nil
     }
 }

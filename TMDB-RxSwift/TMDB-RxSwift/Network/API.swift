@@ -19,7 +19,7 @@ final class API {
         components.scheme = "https"
         components.host = "api.themoviedb.org"
         components.path = endpoint
-        var queryParams:[URLQueryItem] = [URLQueryItem(name: "language", value: "en-US"),
+        let queryParams:[URLQueryItem] = [URLQueryItem(name: "language", value: currentLanguageCode),
                                           URLQueryItem(name: "page", value: String(page))]
         components.queryItems = queryParams
         return components.url
