@@ -60,10 +60,8 @@ final class PopularSeriesListViewController: BaseViewController {
             .map({ ($0.cell as? PopularSeriesListCollectionViewCell, $0.at.item) })
             .subscribe { [weak self] cell, indexPath in
                 guard let self = self else { return }
-                if indexPath > self.viewModel.popularSeriesList.count - 5 {
-                    if self.viewModel.canLoadMore() {
-                        self.loadMoreData()
-                    }
+                if indexPath == self.viewModel.popularSeriesList.count - 1,                    self.viewModel.canLoadMore() {
+                    self.loadMoreData()
                 }
             }
             .disposed(by: bag)
