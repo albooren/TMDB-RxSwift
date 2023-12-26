@@ -10,6 +10,8 @@ import SDWebImage
 
 final class DetailViewController: BaseViewController {
     
+    var viewModel:DetailViewModel?
+    
     private var posterImageView : UIImageView = {
         let imageview = UIImageView()
         imageview.contentMode = .scaleAspectFit
@@ -17,19 +19,19 @@ final class DetailViewController: BaseViewController {
         return imageview
     }()
     
-    private var imdbLogo : UIImageView = {
+    private let imdbLogo : UIImageView = {
         let imageview = UIImageView(image: UIImage(named: "IMDBLogo"))
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
     
-    private var starIcon : UIImageView = {
+    private let starIcon : UIImageView = {
         let imageview = UIImageView(image: UIImage(named: "starIcon"))
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
     
-    private var rateLabel : UILabel = {
+    private var voteLabel : UILabel = {
         let label = UILabel()
         label.textColor = .gray
         label.font = FontManager.fontMedium(15)
@@ -56,7 +58,7 @@ final class DetailViewController: BaseViewController {
         return label
     }()
     
-    private var dot : UIView = {
+    private let dotView : UIView = {
         let view = UIView()
         view.layer.cornerRadius = 2
         view.backgroundColor = .systemYellow
@@ -67,9 +69,10 @@ final class DetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
     }
     
-    override func initUI(){
+    override func initUI() {
         super.initUI()
         navigationController?.navigationBar.tintColor = UIColor.label
         
@@ -103,25 +106,24 @@ final class DetailViewController: BaseViewController {
             make.width.height.equalTo(16)
         })
         
-        scrollView.addSubview(rateLabel)
-        rateLabel.snp.makeConstraints({ make in
+        scrollView.addSubview(voteLabel)
+        voteLabel.snp.makeConstraints({ make in
             make.top.equalTo(posterImageView.snp.bottom).offset(16)
             make.left.equalTo(starIcon.snp.right).offset(8)
             make.centerY.equalTo(starIcon)
         })
         
-        
-        scrollView.addSubview(dot)
-        dot.snp.makeConstraints { make in
+        scrollView.addSubview(dotView)
+        dotView.snp.makeConstraints { make in
             make.height.width.equalTo(4)
-            make.left.equalTo(rateLabel.snp.right).offset(8)
-            make.centerY.equalTo(rateLabel)
+            make.left.equalTo(voteLabel.snp.right).offset(8)
+            make.centerY.equalTo(voteLabel)
         }
         
         scrollView.addSubview(dateLabel)
         dateLabel.snp.makeConstraints({ make in
             make.top.equalTo(posterImageView.snp.bottom).offset(16)
-            make.left.equalTo(dot.snp.right).offset(8)
+            make.left.equalTo(dotView.snp.right).offset(8)
             make.centerY.equalTo(starIcon)
         })
         
@@ -135,26 +137,15 @@ final class DetailViewController: BaseViewController {
         movieDescriptionLabel.snp.makeConstraints({ make in
             make.left.right.equalTo(view).inset(16)
             make.top.equalTo(movieNameLabel.snp.bottom).offset(16)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-20)
         })
-        
-        scrollView.contentSize = CGSize(width: screenWidth,
-                                        height: movieDescriptionLabel.frame.origin.y + (movieDescriptionLabel.frame.height))
-        
     }
     
-    func fillWith(image:String,name:String,desc:String,date:String,vote:Double){
-        
-        posterImageView.sd_setImage(with: API.shared.getImageURL(with: image))
-        let formattedVote = String(format: "%.2f", vote)
-        let range = (formattedVote + "/10" as NSString).range(of: formattedVote)
-        let mutableAttributedString = NSMutableAttributedString.init(string: formattedVote + "/10")
-        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor,
-                                             value: UIColor.label,
-                                             range: range)
-        movieNameLabel.text = name
-        rateLabel.attributedText = mutableAttributedString
-        dateLabel.text = date.toDate(format: serverDateFormat)?.convertDateToString(format: clientDateStringFormat)
-        movieDescriptionLabel.text = desc
+    private func updateUI() {
+        posterImageView.sd_setImage(with: viewModel?.getImageURL())
+        movieNameLabel.text = viewModel?.getSeriesName()
+        voteLabel.attributedText = viewModel?.getSeriesVote()
+        dateLabel.text = viewModel?.getSeriesReleaseDate()
+        movieDescriptionLabel.text = viewModel?.getSeriesDescription()
     }
 }

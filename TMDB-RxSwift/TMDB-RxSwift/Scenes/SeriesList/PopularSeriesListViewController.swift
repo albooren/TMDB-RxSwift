@@ -21,10 +21,10 @@ final class PopularSeriesListViewController: BaseViewController {
         flowLayout.minimumLineSpacing = 0
         
         let collectionView = UICollectionView(frame: .zero,
-                                  collectionViewLayout: flowLayout)
+                                              collectionViewLayout: flowLayout)
         collectionView.backgroundColor = UIColor.clear
         collectionView.register(PopularSeriesListCollectionViewCell.self,
-                    forCellWithReuseIdentifier: PopularSeriesListCollectionViewCell.id)
+                                forCellWithReuseIdentifier: PopularSeriesListCollectionViewCell.id)
         return collectionView
     }()
     
@@ -45,15 +45,15 @@ final class PopularSeriesListViewController: BaseViewController {
     func bindCollectionView(){
         viewModel.publishlist
             .bind(to: popularSeriesListCollectionView.rx.items(cellIdentifier: PopularSeriesListCollectionViewCell.id,
-                                                                                cellType: PopularSeriesListCollectionViewCell.self)) {[weak self] _, data, cell in
-            guard let self = self else { return }
-            self.dismissLoader()
-            let itemData = PopularSeriesItem(movieName: data.name ?? "",
-                                             movieShortDesc: data.overview ?? "",
-                                             imageURL: API.shared.getImageURL(with: data.posterPath ?? ""),
-                                             vote: data.voteAverage ?? 0)
-            cell.fillWith(item: itemData)
-        }.disposed(by: bag)
+                                                               cellType: PopularSeriesListCollectionViewCell.self)) {[weak self] _, data, cell in
+                guard let self = self else { return }
+                self.dismissLoader()
+                let itemData = PopularSeriesItem(movieName: data.name ?? "",
+                                                 movieShortDesc: data.overview ?? "",
+                                                 imageURL: API.shared.getImageURL(with: data.posterPath ?? ""),
+                                                 vote: data.voteAverage ?? 0)
+                cell.fillWith(item: itemData)
+            }.disposed(by: bag)
         
         popularSeriesListCollectionView.rx.willDisplayCell
             .observe(on: MainScheduler.instance)
@@ -70,15 +70,16 @@ final class PopularSeriesListViewController: BaseViewController {
         
         popularSeriesListCollectionView.rx.modelSelected(PopularSeriesModel.self)
             .bind {[weak self] movie in
-            guard let self = self else { return }
-            let detail = DetailViewController()
-            detail.fillWith(image: movie.posterPath ?? "",
-                            name: movie.name ?? "",
-                            desc: movie.overview ?? "",
-                            date: movie.firstAirDate ?? "",
-                            vote: movie.voteAverage ?? 0)
-            self.navigationController?.pushViewController(detail, animated: true)
-        }.disposed(by: bag)
+                guard let self = self else { return }
+                let detailViewController = DetailViewController()
+                let viewModel = DetailViewModel(imageURL: movie.posterPath ?? "",
+                                                name: movie.name ?? "",
+                                                desc: movie.overview ?? "",
+                                                date: movie.firstAirDate ?? "",
+                                                vote: movie.voteAverage ?? 0)
+                detailViewController.viewModel = viewModel
+                self.navigationController?.pushViewController(detailViewController, animated: true)
+            }.disposed(by: bag)
         
         presentLoader()
         viewModel.getData()

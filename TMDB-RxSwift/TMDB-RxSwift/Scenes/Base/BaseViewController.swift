@@ -13,7 +13,7 @@ class BaseViewController: UIViewController {
     var mainView = UIView()
     
     private let alertLoader : UIAlertController = {
-        let alert = UIAlertController(title: nil,message: "Please wait...",preferredStyle: .alert)
+        let alert = UIAlertController(title: nil,message: "Please wait...",preferredStyle: .actionSheet)
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50,height: 50))
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = .medium
