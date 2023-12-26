@@ -8,13 +8,11 @@
 import UIKit
 import SDWebImage
 import RxSwift
-import RxRelay
 
 final class PopularSeriesListCollectionViewCell: UICollectionViewCell {
     
     static let id = "popularSeriesListCollectionViewCell"
     
-    private lazy var rightArrow = UIImageView()
     private lazy var movieImage : UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
@@ -23,50 +21,60 @@ final class PopularSeriesListCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var movieNameLabel = UILabel()
-    private lazy var movieShortDescLabel = UILabel()
-    private lazy var movieVoteLabel = UILabel()
-    private lazy var underLine = UIView()
+    private var movieNameLabel: UILabel = {
+        let label = UILabel()
+        label.font = FontManager.fontBold(15)
+        return label
+    }()
+    private var movieShortDescLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .secondaryLabel
+        label.font = FontManager.fontMedium(13)
+        return label
+    }()
     
-    private lazy var starIcon : UIImageView = {
+    private var movieVoteLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = FontManager.fontMedium(12)
+        return label
+    }()
+    
+    private let underLine : UIView = {
+        let view = UIView()
+        view.backgroundColor = .separator
+        view.layer.opacity = 0.5
+        return view
+    }()
+    
+    private let starIcon : UIImageView = {
         let imageview = UIImageView(image: UIImage(named: "starIcon"))
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
     
-    let bag = DisposeBag()
+    private let rightArrow : UIImageView = {
+        let imageview = UIImageView(image: UIImage(named: "rightArrow")?.withRenderingMode(.alwaysTemplate))
+        imageview.tintColor = .label
+        imageview.contentMode = .scaleAspectFill
+        return imageview
+    }()
+    
+    private let bag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        makeCell()
+        createUI()
     }
     
-    private func makeCell(){
-        clipsToBounds = true
+    private func createUI(){
         addSubview(movieImage)
-        
-        movieNameLabel.font = FontManager.fontBold(15)
         addSubview(movieNameLabel)
-        
-        movieShortDescLabel.numberOfLines = 0
-        movieShortDescLabel.textColor = .secondaryLabel
-        
-        movieShortDescLabel.font = FontManager.fontMedium(13)
         addSubview(movieShortDescLabel)
-        
         addSubview(starIcon)
-        
-        movieVoteLabel.textColor = .gray
-        movieVoteLabel.font = FontManager.fontMedium(12)
         addSubview(movieVoteLabel)
-        
-        rightArrow = UIImageView(image: UIImage(named: "rightArrow")?.withRenderingMode(.alwaysTemplate))
-        rightArrow.tintColor = .label
-        rightArrow.contentMode = .scaleAspectFill
         addSubview(rightArrow)
-        
-        underLine.backgroundColor = .separator
-        underLine.layer.opacity = 0.5
         addSubview(underLine)
         
         movieImage.snp.makeConstraints { make in
@@ -113,7 +121,6 @@ final class PopularSeriesListCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(1)
         }
     }
-    
     
     func fillWith(item: PopularSeriesItem) {
         Observable.just(item.movieName)
