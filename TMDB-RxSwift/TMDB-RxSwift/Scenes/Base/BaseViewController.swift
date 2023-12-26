@@ -26,7 +26,8 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func makeLoader(){
+    func presentLoader(){
+        if alertLoader.isBeingPresented { return }
         alertLoader = UIAlertController(title: nil,
                                         message: "Please wait...",
                                         preferredStyle: .alert)

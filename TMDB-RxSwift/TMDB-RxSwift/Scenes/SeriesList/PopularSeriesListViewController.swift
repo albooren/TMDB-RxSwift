@@ -43,7 +43,8 @@ final class PopularSeriesListViewController: BaseViewController {
     }
     
     func bindCollectionView(){
-        viewModel.publishlist.bind(to: popularSeriesListCollectionView.rx.items(cellIdentifier: PopularSeriesListCollectionViewCell.id,
+        viewModel.publishlist
+            .bind(to: popularSeriesListCollectionView.rx.items(cellIdentifier: PopularSeriesListCollectionViewCell.id,
                                                                                 cellType: PopularSeriesListCollectionViewCell.self)) {[weak self] _, data, cell in
             guard let self = self else { return }
             self.dismissLoader()
@@ -67,7 +68,8 @@ final class PopularSeriesListViewController: BaseViewController {
             }
             .disposed(by: bag)
         
-        popularSeriesListCollectionView.rx.modelSelected(PopularSeriesModel.self).bind {[weak self] movie in
+        popularSeriesListCollectionView.rx.modelSelected(PopularSeriesModel.self)
+            .bind {[weak self] movie in
             guard let self = self else { return }
             let detail = DetailViewController()
             detail.fillWith(image: movie.posterPath ?? "",
@@ -78,12 +80,12 @@ final class PopularSeriesListViewController: BaseViewController {
             self.navigationController?.pushViewController(detail, animated: true)
         }.disposed(by: bag)
         
-        makeLoader()
+        presentLoader()
         viewModel.getData()
     }
     
     func loadMoreData(){
-        makeLoader()
+        presentLoader()
         viewModel.pageUp()
         viewModel.getData()
     }
