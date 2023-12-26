@@ -30,7 +30,7 @@ final class PopularSeriesListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Popular Series"
+        title = "SeriesListTitle".localized
         bindCollectionView()
     }
     
