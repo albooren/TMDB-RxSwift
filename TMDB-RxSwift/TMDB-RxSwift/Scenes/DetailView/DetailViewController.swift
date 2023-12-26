@@ -10,46 +10,46 @@ import SDWebImage
 
 final class DetailViewController: BaseViewController {
     
-    private lazy var posterImageView : UIImageView = {
+    private var posterImageView : UIImageView = {
         let imageview = UIImageView()
         imageview.contentMode = .scaleAspectFit
         imageview.clipsToBounds = true
         return imageview
     }()
     
-    private lazy var imdbLogo : UIImageView = {
+    private var imdbLogo : UIImageView = {
         let imageview = UIImageView(image: UIImage(named: "IMDBLogo"))
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
     
-    private lazy var starIcon : UIImageView = {
+    private var starIcon : UIImageView = {
         let imageview = UIImageView(image: UIImage(named: "starIcon"))
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
     
-    private lazy var rateLabel : UILabel = {
+    private var rateLabel : UILabel = {
         let label = UILabel()
         label.textColor = .gray
         label.font = FontManager.fontMedium(15)
         return label
     }()
     
-    private lazy var dateLabel : UILabel = {
+    private var dateLabel : UILabel = {
         let label = UILabel()
         label.textColor = .secondaryLabel
         label.font = FontManager.fontMedium(15)
         return label
     }()
     
-    private lazy var movieNameLabel : UILabel = {
+    private var movieNameLabel : UILabel = {
         let label = UILabel()
         label.font = FontManager.fontBold(20)
         return label
     }()
     
-    private lazy var movieDescriptionLabel : UILabel = {
+    private var movieDescriptionLabel : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = FontManager.fontRegular(15)
