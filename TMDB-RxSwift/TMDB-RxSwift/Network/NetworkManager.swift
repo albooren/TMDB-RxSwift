@@ -5,8 +5,6 @@
 //  Created by albooren on 24.12.2023.
 //
 
-typealias RequestCompletion<T> = (Result<T, Error>) -> Void
-
 import RxSwift
 import Alamofire
 
