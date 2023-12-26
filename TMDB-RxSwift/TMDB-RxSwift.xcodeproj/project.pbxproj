@@ -20,7 +20,7 @@
 		C9BE094C2B3876560053A080 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE094B2B3876560053A080 /* BaseViewController.swift */; };
 		C9BE094F2B38834B0053A080 /* PopularSeriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE094E2B38834B0053A080 /* PopularSeriesListViewModel.swift */; };
 		C9BE09512B38837A0053A080 /* PopularSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09502B38837A0053A080 /* PopularSeriesModel.swift */; };
-		C9BE09542B3883B10053A080 /* PopularSeriesListCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09532B3883B10053A080 /* PopularSeriesListCVCell.swift */; };
+		C9BE09542B3883B10053A080 /* PopularSeriesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09532B3883B10053A080 /* PopularSeriesListCollectionViewCell.swift */; };
 		C9BE095A2B3883E70053A080 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE09552B3883E70053A080 /* FontManager.swift */; };
 		C9BE095B2B3883E70053A080 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9BE09572B3883E70053A080 /* SanFranciscoText-Regular.otf */; };
 		C9BE095C2B3883E70053A080 /* SanFranciscoText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C9BE09582B3883E70053A080 /* SanFranciscoText-Bold.otf */; };
@@ -67,7 +67,7 @@
 		C9BE094B2B3876560053A080 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C9BE094E2B38834B0053A080 /* PopularSeriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesListViewModel.swift; sourceTree = "<group>"; };
 		C9BE09502B38837A0053A080 /* PopularSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesModel.swift; sourceTree = "<group>"; };
-		C9BE09532B3883B10053A080 /* PopularSeriesListCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesListCVCell.swift; sourceTree = "<group>"; };
+		C9BE09532B3883B10053A080 /* PopularSeriesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSeriesListCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9BE09552B3883E70053A080 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		C9BE09572B3883E70053A080 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
 		C9BE09582B3883E70053A080 /* SanFranciscoText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Bold.otf"; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		C9BE09522B38839D0053A080 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				C9BE09532B3883B10053A080 /* PopularSeriesListCVCell.swift */,
+				C9BE09532B3883B10053A080 /* PopularSeriesListCollectionViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -454,7 +454,7 @@
 			files = (
 				C9BE09642B38A0DA0053A080 /* DetailViewController.swift in Sources */,
 				C94F1C8C2B386FAB0064FD8F /* PopularSeriesListViewController.swift in Sources */,
-				C9BE09542B3883B10053A080 /* PopularSeriesListCVCell.swift in Sources */,
+				C9BE09542B3883B10053A080 /* PopularSeriesListCollectionViewCell.swift in Sources */,
 				C9BE09612B3893D20053A080 /* NetworkManager.swift in Sources */,
 				C9BE09512B38837A0053A080 /* PopularSeriesModel.swift in Sources */,
 				C9BE09692B38AD030053A080 /* Date+StringExtensions.swift in Sources */,

@@ -8,8 +8,11 @@
 import UIKit
 import SDWebImage
 import RxSwift
+import RxRelay
 
-final class PopularSeriesListCVCell: UICollectionViewCell {
+final class PopularSeriesListCollectionViewCell: UICollectionViewCell {
+    
+    static let id = "popularSeriesListCollectionViewCell"
     
     private lazy var rightArrow = UIImageView()
     private lazy var movieImage : UIImageView = {
@@ -30,6 +33,8 @@ final class PopularSeriesListCVCell: UICollectionViewCell {
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
+    
+    let bag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -82,7 +87,7 @@ final class PopularSeriesListCVCell: UICollectionViewCell {
             make.left.equalTo(movieImage.snp.right).offset(8)
             make.right.equalToSuperview().inset(8)
         })
-
+        
         movieShortDescLabel.snp.makeConstraints({ make in
             make.top.equalTo(movieNameLabel.snp.bottom).offset(4)
             make.bottom.lessThanOrEqualTo(movieVoteLabel.snp.top).offset(-4)
@@ -91,7 +96,6 @@ final class PopularSeriesListCVCell: UICollectionViewCell {
         })
         
         movieVoteLabel.snp.makeConstraints({ make in
-            make.height.equalTo(10)
             make.bottom.equalTo(movieImage.snp.bottom)
             make.right.equalTo(rightArrow.snp.left).offset(-10)
         })
@@ -111,22 +115,48 @@ final class PopularSeriesListCVCell: UICollectionViewCell {
     }
     
     
-    func fillWith(movieName:String,movieShortDesc:String,imageURL:URL?,vote:Double){
-        movieNameLabel.text = movieName
-        movieShortDescLabel.text = movieShortDesc
+    func fillWith(item: PopularSeriesItem) {
+        Observable.just(item.movieName)
+            .bind(to: movieNameLabel.rx.text)
+            .disposed(by: bag)
         
-        let formattedVote = String(format: "%.2f", vote)
-        let range = (formattedVote + "/10" as NSString).range(of: formattedVote)
-        let mutableAttributedString = NSMutableAttributedString.init(string: formattedVote + "/10")
-        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor,
-                                             value: UIColor.label,
-                                             range: range)
-        movieVoteLabel.attributedText = mutableAttributedString
-        movieImage.sd_setImage(with: imageURL)
+        Observable.just(item.movieShortDesc)
+            .bind(to: movieShortDescLabel.rx.text)
+            .disposed(by: bag)
+        
+        Observable.just(item.getVoteAttributedString())
+            .bind(to: movieVoteLabel.rx.attributedText)
+            .disposed(by: bag)
+        
+        if let imageURL = item.imageURL {
+            Observable.just(imageURL)
+                .subscribe(onNext: { [weak self] url in
+                    guard let self = self else { return }
+                    self.movieImage.sd_setImage(with: url)
+                })
+                .disposed(by: bag)
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+struct PopularSeriesItem {
+    let movieName: String
+    let movieShortDesc: String
+    let imageURL: URL?
+    let vote: Double
+    
+    func getVoteAttributedString() -> NSAttributedString {
+        let formattedVote = String(format: "%.2f", vote)
+        let range = (formattedVote + "/10" as NSString).range(of: formattedVote)
+        let mutableAttributedString = NSMutableAttributedString(string: formattedVote + "/10")
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor,
+                                             value: UIColor.label,
+                                             range: range)
+        return mutableAttributedString
     }
 }
 
